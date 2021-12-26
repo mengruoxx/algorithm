@@ -10,7 +10,7 @@ public class PreOrderTree {
         if (root == null) {
             return;
         }
-        System.out.println(root.value);
+        System.out.println(root.val);
         preOrder(root.left);
         preOrder(root.right);
     }

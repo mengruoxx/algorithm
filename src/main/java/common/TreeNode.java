@@ -1,11 +1,11 @@
 package common;
 
 public class TreeNode {
-    public int value;
+    public int val;
     public TreeNode left;
     public TreeNode right;
-    public TreeNode(int value, TreeNode left, TreeNode right) {
-        this.value = value;
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
         this.left = left;
         this.right = right;
     }
