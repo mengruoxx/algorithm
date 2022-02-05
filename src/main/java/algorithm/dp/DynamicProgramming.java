@@ -23,7 +23,7 @@ public class DynamicProgramming {
      *
      * @return
      */
-    public int BagProblem(int capacity, int[] weight, int[] value) {
+    public int bagProblem(int capacity, int[] weight, int[] value) {
         Map<Integer, Integer> prevMaxValues = new HashMap<>(weight.length);
         for (int currentCap = 1; currentCap <= capacity; currentCap++) {
             prevMaxValues.put(currentCap, 0);
@@ -53,7 +53,7 @@ public class DynamicProgramming {
 
     public static void main(String[] args) {
         DynamicProgramming dynamicProgramming = new DynamicProgramming();
-        int value = dynamicProgramming.BagProblem(6, new int[]{3, 1, 2, 2, 1}, new int[]{10, 3, 9, 5, 6});
+        int value = dynamicProgramming.bagProblem(6, new int[]{3, 1, 2, 2, 1}, new int[]{10, 3, 9, 5, 6});
         System.out.println(value);
     }
 }

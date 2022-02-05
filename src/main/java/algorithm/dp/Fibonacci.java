@@ -53,8 +53,12 @@ public class Fibonacci {
      * @return
      */
     public int dpTableFib(int n) {
-        if (n < 1) return 0;
-        if (n == 1 || n == 2) return 1;
+        if (n < 1) {
+            return 0;
+        }
+        if (n == 1 || n == 2) {
+            return 1;
+        }
         // 需要保存的是前两项的值，这里也可以使用两个变量prev, cur来保存
         int[] dpTable = new int[]{1, 1};
         int result = 0;

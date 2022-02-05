@@ -1,6 +1,6 @@
 package leetcode;
 
-import common.LinkedListUtil;
+import common.TestUtil;
 import common.ListNode;
 
 /**
@@ -145,9 +145,9 @@ public class L2AddTwoNumbers {
 
     public static void main(String[] args) {
         L2AddTwoNumbers l = new L2AddTwoNumbers();
-        ListNode l3 = l.addTwoNumbers2(LinkedListUtil.create(new int[]{2, 4, 3}),
-                LinkedListUtil.create(new int[]{5,6,4}));
-        LinkedListUtil.print(l3);
+        ListNode l3 = l.addTwoNumbers2(TestUtil.createLinkedList(new int[]{2, 4, 3}),
+                TestUtil.createLinkedList(new int[]{5,6,4}));
+        TestUtil.printLinkedList(l3);
     }
 
 }
