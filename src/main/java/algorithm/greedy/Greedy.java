@@ -18,7 +18,7 @@ public class Greedy {
      * @param coverList
      * @return
      */
-    public int leastBoardcast(Set<Integer> toBeCovered, Map<String, Set<Integer>> coverList) {
+    public int leastBroadcast(Set<Integer> toBeCovered, Map<String, Set<Integer>> coverList) {
         // 当前已覆盖的州
         Set<Integer> covered = new HashSet<>();
         // 已选择广播台的数量
