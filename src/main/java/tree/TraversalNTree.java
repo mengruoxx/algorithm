@@ -18,11 +18,13 @@ public class TraversalNTree {
             Queue<Node> queue = new LinkedList<>();
             queue.add(root);
             while (!queue.isEmpty()) {
-                Node node = queue.poll();
-                List<Node> children = node.children;
-                queue.addAll(children);
-                for (Node child : children) {
-
+                List<Integer> level = new ArrayList<>();
+                int levelCount = queue.size();
+                for (int i = 0; i < levelCount; i++) {
+                    Node node = queue.poll();
+                    level.add(node.val);
+                    List<Node> children = node.children;
+                    queue.addAll(children);
                 }
             }
 

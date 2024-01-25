@@ -3,6 +3,9 @@ package tree;
 import common.TreeNode;
 
 /**
+ * 计算树高
+ * 1.树高就是层次遍历
+ * 2.用递归
  * @author mengruo
  * @date 2022/7/11 16:38
  */

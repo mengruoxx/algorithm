@@ -58,7 +58,7 @@ public class L114Flatten {
     }
 
     /**
-     * 先序遍历（DFS 深度优先遍历）
+     * 先序遍历（DFS s深度优先遍历）
      */
     public void flatten(TreeNode root) {
         if (root == null) {

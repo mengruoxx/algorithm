@@ -1,4 +1,4 @@
-package leetcode;
+package algorithm.linkedlist;
 
 import common.ListNode;
 
