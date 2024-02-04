@@ -23,7 +23,7 @@ package algorithm.linkedlist;
  * @author mengruo
  * @date 2024/1/24 15:56
  */
-public class MyLinkedList {
+public class L707MyLinkedList {
 
     /**
      * 假头
@@ -47,7 +47,7 @@ public class MyLinkedList {
         }
     }
 
-    public MyLinkedList() {
+    public L707MyLinkedList() {
         // 初始化假头,tail指向假头
         preHead = new Node(0, null);
         tail = preHead;
@@ -147,16 +147,16 @@ public class MyLinkedList {
     }
 
     public static void main(String[] args) {
-        MyLinkedList myLinkedList = new MyLinkedList();
+        L707MyLinkedList l707MyLinkedList = new L707MyLinkedList();
         // "addAtHead","addAtHead","addAtHead","addAtIndex","deleteAtIndex","addAtHead","addAtTail","get"
-        myLinkedList.addAtHead(7);
-        myLinkedList.addAtHead(2);
-        myLinkedList.addAtHead(1);
-        myLinkedList.addAtIndex(3, 0);
-        myLinkedList.deleteAtIndex(2);
-        myLinkedList.addAtHead(6);
-        myLinkedList.addAtTail(4);
-        myLinkedList.get(4);
+        l707MyLinkedList.addAtHead(7);
+        l707MyLinkedList.addAtHead(2);
+        l707MyLinkedList.addAtHead(1);
+        l707MyLinkedList.addAtIndex(3, 0);
+        l707MyLinkedList.deleteAtIndex(2);
+        l707MyLinkedList.addAtHead(6);
+        l707MyLinkedList.addAtTail(4);
+        l707MyLinkedList.get(4);
     }
 }
 
