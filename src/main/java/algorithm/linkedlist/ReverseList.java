@@ -3,13 +3,32 @@ package algorithm.linkedlist;
 import common.ListNode;
 
 /**
- * 翻转链表
+ * @author mengruo
+ * 翻转/反转链表
  *  null -> 1 -> 2 -> 3 -> 4
  *   |      |
  *  pre  cur    next
  *  每次将箭头反转，并往右边遍历
  */
 public class ReverseList {
+
+    /**
+     * 假头法。新建一个假头，遍历链表将节点使用尾插法插入新链表
+     * 尾插法步骤：先将头结点的next缓存下来，然后将头结点的next先指向假头的next，
+     * 再将假头的next指向这个新头结点 （先连上去，再修改假头指向）
+     * @param head
+     * @return
+     */
+    public ListNode reverseList(ListNode head) {
+        ListNode dummy = new ListNode();
+        while (head != null) {
+            ListNode temp = head.next;
+            head.next = dummy.next;
+            dummy.next = head;
+            head = temp;
+        }
+        return dummy.next;
+    }
 
     public ListNode reverse(ListNode head) {
         if (head == null) {
