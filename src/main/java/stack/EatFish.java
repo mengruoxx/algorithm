@@ -17,6 +17,41 @@ import java.util.Stack;
  * @date 2024/1/21 15:31
  */
 public class EatFish {
+
+    /**
+     * 2024/7/9
+     * @param size
+     * @param dir
+     * @return
+     */
+    public int eatFish(int[] size, int[] dir) {
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < size.length; i++) {
+            if (stack.isEmpty()) {
+                stack.push(i);
+            } else {
+                boolean eaten = false;
+                // 方向相对才能被吃
+                while (dir[i] == 0 && dir[stack.peek()] == 1) {
+                    // 如果是即将入栈的鱼比较大，就消除栈里的鱼
+                    if (size[i] > size[stack.peek()]) {
+                        // 消除掉栈顶元素
+                        stack.pop();
+                    } else {
+                        // 如果是栈顶的鱼比较大，就消除即将入栈的鱼
+                        eaten = true;
+                        break;
+                    }
+                }
+                // 该鱼入栈
+                if (!eaten) {
+                    stack.push(i);
+                }
+            }
+        }
+        return stack.size();
+    }
+
     public int eat(int[] size, int[] dir) {
         // 0: 向左游 1：向右游
         Stack<Integer> stack = new Stack<>();

@@ -12,6 +12,31 @@ import java.util.Stack;
  * @date 2024/1/21 16:30
  */
 public class RightFirstSmall {
+
+    /**
+     * 2024/7/9
+     * @param list
+     * @return
+     */
+    public int[] rightFirstSmall2(int[] list) {
+        int[] result = new int[list.length];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < list.length; i++) {
+            while (!stack.isEmpty() && list[i] < list[stack.peek()]) {
+                Integer index = stack.pop();
+                result[index] = i;
+            }
+            stack.push(i);
+        }
+        for (Integer i : stack) {
+            result[i] = -1;
+        }
+        return result;
+    }
+
+
+
+
     public int[] rightFirstSmall(int[] list) {
         int[] result = new int[list.length];
         Stack<Integer> stack = new Stack<>();
