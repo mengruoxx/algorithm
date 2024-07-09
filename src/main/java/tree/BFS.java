@@ -13,23 +13,6 @@ import java.util.List;
  */
 public class BFS {
 
-    public List<Integer> BFS2(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        LinkedList<TreeNode> list = new LinkedList<>();
-        list.addLast(root);
-        while (!list.isEmpty()) {
-            TreeNode node = list.removeFirst();
-            result.add(node.getVal());
-            if (root.left != null) {
-                list.addLast(root.left);
-            }
-            if (root.right != null) {
-                list.addLast(root.right);
-            }
-        }
-        return result;
-    }
-
     /**
      * 非递归实现
      * @param root
@@ -55,6 +38,28 @@ public class BFS {
                 }
             }
 
+        }
+        return result;
+    }
+
+    /**
+     * 简单一维结果
+     * @param root
+     * @return
+     */
+    public List<Integer> BFS2(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        LinkedList<TreeNode> list = new LinkedList<>();
+        list.addLast(root);
+        while (!list.isEmpty()) {
+            TreeNode node = list.removeFirst();
+            result.add(node.getVal());
+            if (root.left != null) {
+                list.addLast(root.left);
+            }
+            if (root.right != null) {
+                list.addLast(root.right);
+            }
         }
         return result;
     }
