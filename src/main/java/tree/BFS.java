@@ -15,6 +15,7 @@ public class BFS {
 
     /**
      * 记录每一层的节点数量，二维结果
+     * 使用一个链表
      * @param root
      * @return
      */
@@ -36,6 +37,35 @@ public class BFS {
                 }
             }
             result.add(level);
+        }
+        return result;
+    }
+
+    /**
+     * 使用当前层和下一层的两个指针
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> BFS4(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        List<TreeNode> curLevel = new ArrayList<>();
+        if (root != null) {
+            curLevel.add(root);
+        }
+        while (!curLevel.isEmpty()) {
+            List<TreeNode> nextLevel = new ArrayList<>();
+            List<Integer> level = new ArrayList<>();
+            for (TreeNode node : curLevel) {
+                level.add(node.getVal());
+                if (node.getLeft() != null) {
+                    nextLevel.add(node.getLeft());
+                }
+                if (node.getRight() != null) {
+                    nextLevel.add(node.getRight());
+                }
+            }
+            result.add(level);
+            curLevel = nextLevel;
         }
         return result;
     }
