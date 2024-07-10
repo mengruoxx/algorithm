@@ -14,30 +14,28 @@ import java.util.List;
 public class BFS {
 
     /**
-     * 非递归实现
+     * 记录每一层的节点数量，二维结果
      * @param root
+     * @return
      */
-    public List<List<Integer>> BFS(TreeNode root) {
+    public List<List<Integer>> BFS3(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         LinkedList<TreeNode> list = new LinkedList<>();
         list.addLast(root);
-        result.add(List.of(root.getVal()));
-        while (list.size() > 0) {
-            // 该层的节点个数
-            int levelCount = list.size();
+        while (!list.isEmpty()) {
+            int nodeCount = list.size();
             List<Integer> level = new ArrayList<>();
-            for (int i = 0; i < levelCount; i++) {
-                TreeNode item = list.removeFirst();
-                if (item.left != null) {
-                    list.addLast(item.left);
-                    level.add(item.left.val);
+            for (int i = 0; i < nodeCount; i++) {
+                TreeNode node = list.removeFirst();
+                level.add(node.getVal());
+                if (node.getLeft() != null) {
+                    list.addLast(node.getLeft());
                 }
-                if (item.right != null) {
-                    list.addLast(item.right);
-                    level.add(item.right.val);
+                if (node.getRight() != null) {
+                    list.addLast(node.getRight());
                 }
             }
-
+            result.add(level);
         }
         return result;
     }
