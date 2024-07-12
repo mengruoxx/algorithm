@@ -42,15 +42,15 @@ public class L236MaxSlidingWindow {
             }
             // 右范围边界往前移一格
             list.addLast(nums[i]);
-            if (i + 1 > k) {
-                // 左范围边界往后移一格
-                if (nums[i - k] == list.getFirst()) {
-                    list.removeFirst();
-                }
+            if (i < k - 1) {
+                // 元素个数还没到k个
+                continue;
             }
-            if (i + 1 >= k) {
-                // 范围内的最大值就是队首元素的值
-                result[i - k + 1] = list.getFirst();
+            // 范围内的最大值就是队首元素的值
+            result[i - k + 1] = list.getFirst();
+            // 左范围边界往后移一格
+            if (nums[i - k] == list.getFirst()) {
+                list.removeFirst();
             }
         }
         return result;
