@@ -56,7 +56,15 @@ public class L236MaxSlidingWindow {
         return result;
     }
 
-
+    /**
+     * 解法2 可以使用循环队列代替linkedList
+     * @param nums
+     * @param k
+     * @return
+     */
+    public static int[] maxSlidingWindow3(int[] nums, int k) {
+        return null;
+    }
 
     public static int[] maxSlidingWindow(int[] nums, int k) {
         LinkedList<Integer> queue = new LinkedList<>();
